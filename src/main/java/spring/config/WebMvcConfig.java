@@ -12,22 +12,22 @@ import javax.annotation.Resource;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-	@Resource
-	private ApiAuthorizeInterceptor apiAuthorizeInterceptor;
-	@Resource
-	private ProxyProperties properties;
+    @Resource
+    private ApiAuthorizeInterceptor apiAuthorizeInterceptor;
+    @Resource
+    private ProxyProperties properties;
 
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName("redirect:doc.html");
-	}
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("redirect:doc.html");
+    }
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		if (CharSequenceUtil.isNotBlank(this.properties.getApiSecret())) {
-			registry.addInterceptor(this.apiAuthorizeInterceptor)
-					.addPathPatterns("/submit/**", "/task/**");
-		}
-	}
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        if (CharSequenceUtil.isNotBlank(this.properties.getApiSecret())) {
+            registry.addInterceptor(this.apiAuthorizeInterceptor)
+                    .addPathPatterns("/submit/**", "/task/**", "/config/**");
+        }
+    }
 
 }

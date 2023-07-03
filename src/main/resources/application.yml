@@ -3,14 +3,39 @@ mj:
     guild-id: xxx
     channel-id: xxx
     user-token: xxx
-    session-id: 9c4055428e13bcbf2248a6b36084c5f3
-    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+    session-id: 206141716574e3c6e5434bdd197c3731
+    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.58
     user-wss: true
+    bot-token:
+  api-secret: xxx
+  notify-hook:
   task-store:
-    type: in_memory
+    type: redis
     timeout: 30d
-  translate-way: null
   queue:
-    timeout-minutes: 5
     core-size: 3
     queue-size: 10
+    timeout-minutes: 10
+  proxy:
+    host:
+    port:
+  ng-discord:
+    server:
+    cdn:
+    wss:
+  translate-way: gpt
+  baidu-translate:
+    appid:
+    app-secret:
+  openai:
+    base-url: https://api.rygpt.xyz/
+    gpt-api-key: xxx
+    timeout: 30s
+    model: gpt-3.5-turbo
+    max-tokens: 2048
+    temperature: 0
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
