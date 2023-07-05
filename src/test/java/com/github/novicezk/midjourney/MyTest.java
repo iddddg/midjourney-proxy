@@ -1,9 +1,10 @@
 package com.github.novicezk.midjourney;
 
+import com.github.novicezk.midjourney.result.Message;
+import com.github.novicezk.midjourney.service.DiscordService;
 import com.github.novicezk.midjourney.service.TranslateService;
-import com.github.novicezk.midjourney.service.translate.GPTTranslateServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -14,14 +15,17 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Version 1.0
  **/
 @SpringBootTest
+@RequiredArgsConstructor
 public class MyTest {
-    @Autowired
-    private TranslateService translateService;
+    private final TranslateService translateService;
+    private final DiscordService discordService;
 
     @Test
     public void test() {
         String prompt = "一群猫猫狗狗";
         String promptEn = translateService.translateToEnglish(prompt);
         System.out.println(prompt + " => " + promptEn);
+        Message<Void> imagine = discordService.imagine(promptEn);
+        System.out.println("imagine = " + imagine);
     }
 }

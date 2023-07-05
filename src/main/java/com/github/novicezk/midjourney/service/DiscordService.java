@@ -9,20 +9,26 @@ import java.util.List;
 
 public interface DiscordService {
 
-	Message<Void> imagine(String prompt);
+    Message<Void> imagine(String prompt);
 
-	Message<Void> upscale(String messageId, int index, String messageHash, int messageFlags);
+    Message<Void> upscale(String messageId, int index, String messageHash, int messageFlags);
 
-	Message<Void> variation(String messageId, int index, String messageHash, int messageFlags);
+    Message<Void> variation(String messageId, int index, String messageHash, int messageFlags);
 
-	Message<Void> reroll(String messageId, String messageHash, int messageFlags);
+    Message<Void> reroll(String messageId, String messageHash, int messageFlags);
 
-	Message<Void> describe(String finalFileName);
+    Message<Void> describe(String finalFileName);
 
-	Message<Void> blend(List<String> finalFileNames, BlendDimensions dimensions);
+    Message<Void> blend(List<String> finalFileNames, BlendDimensions dimensions);
 
-	Message<String> upload(String fileName, DataUrl dataUrl);
+    Message<String> upload(String fileName, DataUrl dataUrl);
 
-	Message<String> sendImageMessage(String content, String finalFileName);
+    Message<Void> settings();
+
+    Message<Void> resetSettings(String messageId);
+
+    Message<Void> preferRemix();
+
+    Message<String> sendImageMessage(String content, String finalFileName);
 
 }
