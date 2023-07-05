@@ -52,6 +52,10 @@ public class ProxyProperties {
 	 */
 	private String notifyHook;
 	/**
+	 * 通知回调线程池大小.
+	 */
+	private int notifyPoolSize = 10;
+	/**
 	 * 接口是否返回任务扩展属性.
 	 */
 	private boolean includeTaskExtended = false;
@@ -103,9 +107,9 @@ public class ProxyProperties {
 	@Data
 	public static class OpenaiConfig {
 		/**
-		 * openai的url.
+		 * 自定义gpt的api-url.
 		 */
-		private String baseUrl = "https://api.openai.com/";
+		private String gptApiUrl;
 		/**
 		 * gpt的api-key.
 		 */
