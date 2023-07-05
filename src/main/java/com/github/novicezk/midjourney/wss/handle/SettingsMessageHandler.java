@@ -25,32 +25,24 @@ public class SettingsMessageHandler extends MessageHandler {
 
     @Override
     public void handle(MessageType messageType, DataObject message) {
-        // .1125965897983594537
-        System.out.println("message = " + message);
         String content = getMessageContent(message);
-        System.out.println("content = " + content);
         Boolean settingsMessage = parse(content);
-        System.out.println("当前settingsMessage = " + settingsMessage);
         if (!settingsMessage) {
             return;
         }
         String messageId = message.hasKey("id") ? message.getString("id") : "1125973175096836126";
         // 关闭Remix
         Boolean checkRemixMode = this.checkRemixMode(message);
-        System.out.println("checkRemixMode = " + checkRemixMode);
         if (checkRemixMode == null) {
             log.error("获取当前Remix mode异常");
         } else if (!checkRemixMode) {
-            System.out.println("关闭remix");
             this.discordService.preferRemix();
         }
         // 重置
         Boolean checkSettings = this.checkSettings(message);
-        System.out.println("checkSettings = " + checkSettings);
         if (checkSettings == null) {
             log.error("获取当前设置值异常");
         } else if (!checkSettings) {
-            System.out.println("重置设置");
             this.discordService.resetSettings(messageId);
         }
     }
