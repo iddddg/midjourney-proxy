@@ -8,14 +8,16 @@ mj:
     user-wss: true
     bot-token:
   api-secret: xxx
+  include-task-extended: false
   notify-hook:
+  notify-pool-size: 10
   task-store:
     type: redis
     timeout: 30d
   queue:
     core-size: 3
     queue-size: 10
-    timeout-minutes: 10
+    timeout-minutes: 5
   proxy:
     host:
     port:
@@ -28,7 +30,7 @@ mj:
     appid:
     app-secret:
   openai:
-    base-url: https://api.rygpt.xyz/
+    gpt-api-url: https://api.openai.com/
     gpt-api-key: xxx
     timeout: 30s
     model: gpt-3.5-turbo

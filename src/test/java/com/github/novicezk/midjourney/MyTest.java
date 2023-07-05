@@ -3,8 +3,8 @@ package com.github.novicezk.midjourney;
 import com.github.novicezk.midjourney.result.Message;
 import com.github.novicezk.midjourney.service.DiscordService;
 import com.github.novicezk.midjourney.service.TranslateService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -15,10 +15,11 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Version 1.0
  **/
 @SpringBootTest
-@RequiredArgsConstructor
 public class MyTest {
-    private final TranslateService translateService;
-    private final DiscordService discordService;
+    @Autowired
+    private TranslateService translateService;
+    @Autowired
+    private DiscordService discordService;
 
     @Test
     public void test() {
