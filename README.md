@@ -1,5 +1,7 @@
 # midjourney-proxy
 
+> 更多功能：[midjourney-proxy-plus](https://github.com/litter-coder/midjourney-proxy-plus)
+
 代理 MidJourney 的discord频道，实现api形式调用AI绘图
 
 [![GitHub release](https://img.shields.io/static/v1?label=release&message=v2.3.5&color=blue)](https://www.github.com/novicezk/midjourney-proxy)
@@ -93,6 +95,7 @@ docker run -d --name midjourney-proxy \
 - [stable-diffusion-mobileui](https://github.com/yuanyuekeji/stable-diffusion-mobileui) : SDUI，基于本接口和SD，可一键打包生成H5和小程序
 - [ChatGPT-Midjourney](https://github.com/Licoy/ChatGPT-Midjourney) : 一键拥有你自己的 ChatGPT+Midjourney 网页服务
 - [MidJourney-Web](https://github.com/ConnectAI-E/MidJourney-Web) : 🍎 Supercharged Experience For MidJourney On Web UI
+- [koishi-plugin-midjourney-discord](https://github.com/araea/koishi-plugin-midjourney-discord) : Koishi插件，在Koishi支持的聊天平台中调用Midjourney
 - 依赖此项目且开源的，欢迎联系作者，加到此处展示
 
 ## 其它
